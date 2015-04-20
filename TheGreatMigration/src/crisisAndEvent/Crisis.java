@@ -3,7 +3,7 @@ package crisisAndEvent;
 public class Crisis {
 
 	boolean isAutomaticlyHappen = false;
-	private String kind;
+	private String kind;//xxfgcn
 	private String description;
 	private Option option1,option2,option3,option4;
 	private String place;
