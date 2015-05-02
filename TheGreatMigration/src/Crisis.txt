@@ -1,0 +1,10 @@
+CR 4 飓风|布里斯班民众举行大规模游行，举起“政府是骗子”“口是心非的政治家”“军队将要屠杀我们”的横幅，中央政府决定插手处理|昆士兰|
+option1|将陆军撤回原住地|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |6|
+option2|命陆军进驻首府，接管政权，武力镇压骚乱|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |7|
+option3|按兵不动，命州政府维持秩序|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |8|
+-
+CR 5 系列|详细描述|place|
+option1|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |6 9|
+option2|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |7|
+option3|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |8 15 16|
+END
