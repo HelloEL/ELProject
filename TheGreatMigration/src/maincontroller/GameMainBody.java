@@ -4,17 +4,21 @@ import java.util.ArrayList;
 
 import mainPanel.MainPanel;
 import crisisAndEvent.Crisis;
-import crisisAndEvent.LoaderController;
+import crisisAndEvent.CrisisEngenderingEvent;
+import crisisAndEvent.RandomEvent;
+import crisisAndEvent.loader.LoaderController;
 import finalAnimation.FinalAnimation;
 
 public class GameMainBody {
 
-	static final int SECOND_PER_DAY = 3;//游戏中每天等于现实中的几秒
-	static final long TIME_OF_GAME = 10000;//总游戏时间，以毫秒为单位，感觉这个参数很差，迟早撤掉
+	public static final int SECOND_PER_DAY = 3;//游戏中每天等于现实中的几秒
+	public static final long TIME_OF_GAME = 10000;//总游戏时间，以毫秒为单位，感觉这个参数很差，迟早撤掉
 	static long timePassed;//纪录游戏中已经度过的时间，以毫秒为单位
 	static int day;//游戏中已经度过的天数，当到达365时，游戏结束
 	
-	private ArrayList<Crisis>crisisList;
+	private ArrayList<Crisis> crisisList;
+	private ArrayList<RandomEvent> randomEventList;
+	private ArrayList<CrisisEngenderingEvent> crisisEngenderingEventList;
 	
 	private MainThread mainThread;//用于纪录时间，作为一个timer
 	LoaderController loaderController;
@@ -22,12 +26,24 @@ public class GameMainBody {
 	public ArrayList<Crisis> getCrisisList(){
 		return crisisList;
 	}
+	public ArrayList<RandomEvent> getRandomEventList() {
+		return randomEventList;
+	}
+	public ArrayList<CrisisEngenderingEvent> getCrisisEngenderingEventList() {
+		return crisisEngenderingEventList;
+	}
 	
 	public GameMainBody() {
 		crisisList = new ArrayList<Crisis>();
+		randomEventList = new ArrayList<RandomEvent>();
+		crisisEngenderingEventList = new ArrayList<CrisisEngenderingEvent>();
 	}
 	
-	void gameMainThread(){
+	
+	
+	
+	
+	public void gameMainThread(){//mainPanel 应该在创建完这个对象之后调用这个方法
 
 		loaderController = new LoaderController();//这里将event和crisis都一起包装导入
 		loaderController.loadCrisisAndEvent();
@@ -40,6 +56,11 @@ public class GameMainBody {
 		FinalAnimation.starts();
 	}
 
+	
+	
+	
+	
+	
 	private class MainThread implements Runnable{
 		//创建了一个线程
 		Thread thread;
@@ -110,5 +131,6 @@ public class GameMainBody {
 		// TODO 自动生成的方法存根
 		mainThread.Pause();
 	}
+
 
 }

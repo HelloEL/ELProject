@@ -3,7 +3,7 @@ package maincontroller;
 public class Parameter {
 
 	private static int score = 0;//几分十几分地往上加
-	private static int foodReserve = 10000;
+	private static int foodReserve = 10000;//注意上限是21亿，否则溢出
 	private static int foodIncreaseRate = 1250;
 	private static int foodDecreaseRate = 1050;
 	private static int population = 12500;//单位不妨设为：万人

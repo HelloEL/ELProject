@@ -1,10 +1,37 @@
+CE 0 飓风|昨日，今年最大飓风“火星”号在昆士兰州首府布里斯班附近登陆，由于飓风预报系统的全面瘫痪，人们手足无措。目前已造成105人死亡。昆士兰州政府已着手处理。|昆士兰|lszz -5 lsxx -1 jk -10 sl +15 my -0 popu -105|-|1|
+-
+CR 1 飓风|飓风造成昆士兰首府郊区几乎所有灾民安置房被吹垮，这些无处可去的灾民走上街头，抢劫商店，打家劫舍。昆士兰州政府请求增援。|昆士兰|
+option1|加强当地警力，安抚灾民，扣留犯法者，并加快安置房的建设。|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|2|
+option2|派出离当地最近的陆军武力镇压骚乱|sf -50 lszz -3 lsxx -3 jk -2 sl +5 my -50 popu -50000|0|
+option3|在加强当地警力，安抚灾民，扣留犯法者，并加快安置房的建设，派出离当地最近的陆军驻扎在首府郊区。|sf -10 lszz +0 lsxx -0 jk -0 sl +5 my -0 popu -0|2 3|
+-
+CE 3 飓风|布里斯班的飓风灾民在得知陆军已经靠近首府的消息后，陷入非常强烈的恐慌，政府尝试安抚但并没有奏效|昆士兰|lszz -5 lsxx -1 jk -10 sl +15 my -0 popu -105|sldown 30 slup 40|4|
+-
 CR 4 飓风|布里斯班民众举行大规模游行，举起“政府是骗子”“口是心非的政治家”“军队将要屠杀我们”的横幅，中央政府决定插手处理|昆士兰|
-option1|将陆军撤回原住地|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |6|
-option2|命陆军进驻首府，接管政权，武力镇压骚乱|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |7|
-option3|按兵不动，命州政府维持秩序|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |8|
+option1|将陆军撤回原住地|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|6|
+option2|命陆军进驻首府，接管政权，武力镇压骚乱|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|7|
+option3|按兵不动，命州政府维持秩序|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|8|
 -
 CR 5 系列|详细描述|place|
-option1|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |6 9|
-option2|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |7|
-option3|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0 |8 15 16|
+option1|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|6 9|
+option2|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|7|
+option3|详细描述|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|8 15 16|
+-
+RE 民众抗议|目前，悉尼电视台进行了一次随机采访，超过三分之一的民众不再认可政府的执政能力，希望总理能够解散内阁，提前举行选举|悉尼|myup 60 mydown 40|0.5|
+-
+RE 卫生状况|世界卫生组织发言人对澳大利亚难民健康状况非常担心，认为随时将可能爆发足以毁灭全人类的超级传染病|世界|jkdown 0 jkup 10|0.7|
+-
+RE 标题|详细描述|南京|lszzdown 1 lszzup 2 lsxxup 4 lsxxdown 3 sldown 5 slup 6 lscbdown 50 lscbup 80 jkdown 7 jkup 8 mydown 15 myup 69|0.25|
+-
+CE 2 系列|详细描述|地方|lsxx -5 popu +10500 jk -30|jkdown 30 popuup 78000|3 7 9|
 END
+
+// 所有的项不需要都列出，如|sf -0 lszz +0 lscb +0 lsxx -0 jk -1 sl +10 my -0 popu -0|，只列出|jk -1 sl +10|就可以了，顺序无所谓，但是空格不能多打，前后不能乱
+
+加空格和 | 符号，|jkdown 0 sldown 10 jkup 10|也是合法的，并不一定要按顺序来，也不用完全列出。如果编译有问题，注意控制台，可能会给出提示信息
+另外如果 没什么项可写的，比如
+
+注意那个END代表文件末尾|jkdown 0 sldown 0 jkup 9000000|，与||或|-|，|+|是等价的，里面没有内容也可以通过编译，|sf -0 lszz +0 my -0 popu -0|与||等价，但是注意
+
+“|”符号不能漏掉
+注意换行符“-”

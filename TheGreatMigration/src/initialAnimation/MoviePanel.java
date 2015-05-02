@@ -6,23 +6,39 @@ import java.io.File;
 import javax.swing.*;
 
 public class MoviePanel extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int indexOfImage = 0;
+	File[] pictures;
 	
-	public void MoviePanel(String filename){
-		File[] images = this.getFiles(filename);
+	public MoviePanel(String filename){
+		pictures = this.getPictures(filename);
 	}
 	
-	public File[] getFiles(String filepath){
+	public File[] getPictures(String filepath){
 		File fileFolder = new File(filepath);
-		File[] pictures = fileFolder.listFiles();
+		pictures = fileFolder.listFiles();
 		return pictures;
 	}
 	
 	public void paint(Graphics g){
-		
+		Image image = new ImageIcon(pictures[indexOfImage].getPath()).getImage();
+		g.drawImage(image, 0, 0, null);
 	}
 	
-	public void playmovie(){
-		
+	public void playMovie(){
+		while(indexOfImage <= pictures.length){
+			try{
+				Thread.sleep(30);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			indexOfImage++;
+			this.repaint();
+			if(indexOfImage == pictures.length)
+				this.setVisible(false);
+		}
 	}
 }
