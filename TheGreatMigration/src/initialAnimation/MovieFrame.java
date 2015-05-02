@@ -6,7 +6,8 @@ import java.awt.*;
 
 
 public class MovieFrame extends Frame{
-	public void setUp(){
+
+	public static void setUp(){
 	
 		JFrame movieFrame = new JFrame();
 		MovieFrame.
