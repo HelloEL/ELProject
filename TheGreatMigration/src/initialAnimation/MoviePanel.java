@@ -10,7 +10,7 @@ public class MoviePanel extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int indexOfImage = 0;
+	private int indexOfImage = 1;
 	File[] pictures;
 	
 	public MoviePanel(String filename){
@@ -30,13 +30,15 @@ public class MoviePanel extends JPanel{
 	
 	public void playMovie(){
 		while(indexOfImage <= pictures.length){
+			this.repaint();
+			
 			try{
 				Thread.sleep(30);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
 			indexOfImage++;
-			this.repaint();
+
 			if(indexOfImage == pictures.length)
 				this.setVisible(false);
 		}
