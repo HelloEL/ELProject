@@ -1,28 +1,26 @@
 package initialAnimation;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
 public class InitialAnimation {
 	
 	
 
 	public static void starts() {
 		
-		ShowPictures showPicture1 = new ShowPictures("OpeningImage/OpeningImage1");
+		JFrame mf = new JFrame();
+		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mf.setSize(1024, 768);
+		mf.setBackground(Color.black);
+		mf.setVisible(true);
 		
-		showPicture1.go();
+		MoviePanel Opening1 = new MoviePanel("Opening 1");
+		mf.getContentPane().add(BorderLayout.CENTER,Opening1);
+		Opening1.playMovie();//play the first clip;		
 		
-		MoviePanel Opening1 = new MoviePanel("Opeing1");
-		
-		Opening1.playMovie();//play the first clip;
-		
-		ShowPictures showPicture2 = new ShowPictures("OpeningImage/OpeningImage2");
-		
-		MoviePanel Opening2 = new MoviePanel("Opeing2");
-		
-		Opening2.playMovie();//play the second clip;
-		
-		MoviePanel Opening3 = new MoviePanel("Opeing3");
-		
-		Opening3.playMovie();//play the third clip;
 		// TODO 自动生成的方法存根
 		//display the picture Zou Hanzhen chooses
 	}
